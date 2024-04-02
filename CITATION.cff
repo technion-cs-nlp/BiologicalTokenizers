@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this repo, please cite it as below."
+authors:
+- family-names: "Dotan"
+  given-names: "Edo"
+- family-names: "Jaschek"
+  given-names: "Gal"
+  orcid: "https://orcid.org/0000-0001-7555-4575"
+- family-names: "Pupko"
+  given-names: "Tal"
+  orcid: "https://orcid.org/0000-0001-9463-2575"
+- family-names: "Belinkov"
+  given-names: "Yonatan"
+title: "Effect of Tokenization on Transformers for Biological Sequences"
+version: 1.0.0
+doi: https://doi.org/10.1101/2023.08.15.553415
+date-released: 2023-08-17
+url: "https://github.com/idotan286/BiologicalTokenizers"
+preferred-citation: 
+  type: article
+  authors:
+  - family-names: "Dotan"
+    given-names: "Edo"
+  - family-names: "Jaschek"
+    given-names: "Gal"
+    orcid: "https://orcid.org/0000-0001-7555-4575"
+  - family-names: "Pupko"
+    given-names: "Tal"
+    orcid: "https://orcid.org/0000-0001-9463-2575"
+  - family-names: "Belinkov"
+    given-names: "Yonatan"
+  doi: "10.1101/2023.08.15.553415"
+  journal: "bioRxiv"
+  month: 08
+  title: "Effect of Tokenization on Transformers for Biological Sequences"
+  year: 2023
