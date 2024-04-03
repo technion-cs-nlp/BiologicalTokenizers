@@ -21,6 +21,60 @@ Effect of vocabulary size and number of training samples on the three tokenizers
 
 The "BFD_Tokenizers" contains the trained tokenizers on the BFD datasset. The path to the tokenizers is as follows: "/BFD_Tokenizers/\<NUMBER OF TRAINING SAMPLES\>/\<TOKENIZER TYPE\>/\<VOCABULARY SIZE\>"
 
+## Training Script:
+
+You can use the provided script `train_tokenizer_bert.py` to perform the training and evaluation.
+
+## Usage Flags
+
+The script supports various flags for customization:
+
++ --tokenizer-type (-t): Choose the type of tokenizer to use. Options include:
+
+  + "BPE" (Byte Pair Encoding, (Sennrich, Haddow, and Birch 2016))
+  + "WPC" (WordPiece, (Schuster and Nakajima 2012))
+  + "UNI" (Unigram, (Kudo 2018))
+  + "WORDS" (each token is a single character)
+  + "PAIRS" (each token is a pair of two characters)
+
++ --vocab-size (-s): Set the vocabulary size for the tokenizer. (Used only when tokenizer type is "BPE", "WPC", or "UNI").
+
++ --results-path (-r): Specify the path to save the tokenizer, transformer, and results.
+
++ --layers-num (-l): Define the number of BERT layers.
+
++ --attention-heads-num (-a): Set the number of BERT attention heads.
+
++ --hidden-size (-z): Specify the hidden size of BERT layer.
+
++ --data-path (-d): Provide the path to the folder containing three files: train.csv, valid.csv, and test.csv. For the datasets used in our paper, you may download them from the "data" folder.
+
++ --epochs (-e): Define the number of training epochs.
+
++ --print-training-loss (-p): Specify the number of steps to print the loss.
+
++ --task-type (-y): Choose the task type:
+
+  + "REGRESSION" (for regression datasets, i.e., predicting a score)
+  + "CLASSIFICATION" (for classification datasets, i.e., predicting a class).
+
++ --max-length (-m): Set the maximum tokens per sequence.
+
++ --learning-rate (-lr): Set the learning rate for the model training.
+
+## Example Usage:
+
+```
+# running the SuperFamily classification training with a "BPE" tokenizer of 3,000 tokens
+python train_tokenizer_bert.py --tokenizer-type BPE --vocab-size 3000 --results-path ./results_SuperFamily --layers-num 6 --attention-heads-num 8 --hidden-size 256 --data-path ./data/SuperFamily/ --epochs 10 --print-training-loss 1000 --task-type CLASSIFICATION --max-length 128
+
+# running the fluorescence prediction training with a "PAIRS" tokenizer
+python train_tokenizer_bert.py --tokenizer-type PAIRS --results-path ./results_fluorescence --layers-num 2 --attention-heads-num 4 --hidden-size 128 --data-path ./data/fluorescence/ --epochs 30 --print-training-loss 100 --task-type REGRESSION --max-length 256 --learning-rate 0.001
+
+# running the stability prediction training with a "WPC" tokenizer of 200 tokens
+python train_tokenizer_bert.py --tokenizer-type WPC --vocab-size 200 --results-path ./results_stability --layers-num 6 --attention-heads-num 4 --hidden-size 128 --data-path ./data/stability/ --epochs 15 --print-training-loss 1000 --task-type REGRESSION --max-length 512 --learning-rate 0.000001
+```
+
 ## APA
 
 ```
@@ -40,3 +94,4 @@ Dotan, E., Jaschek, G., Pupko, T., & Belinkov, Y. (2023). Effect of Tokenization
 }
 
 ```
+

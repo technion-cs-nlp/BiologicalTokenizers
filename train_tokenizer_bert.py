@@ -68,6 +68,7 @@ def add_arguments(parser):
     parser.add_argument("-p", "--print-training-loss", type=int, default=1000, help='number of iteration before printing a log')
     parser.add_argument("-y", "--task-type", type=str, choices=[TASK_REGRESSION, TASK_CLASSIFICATION], required=True, help=f'task type: ["{TASK_REGRESSION}" or "{TASK_CLASSIFICATION}"]')
     parser.add_argument("-m", "--max-length", type=int, default=512, help=f'max tokens per seqeunce')
+    parser.add_argument("-lr", "--learning-rate", type=float, default=0.0001, help=f'learning rate for the model training')
 
 def prepare_tokenizer_trainer(alg, voc_size):
     """
@@ -230,12 +231,12 @@ class BioBERTModel(nn.Module):
         
         return result
 
-def train_model(model, task_type, train_generator, valid_generator, test_generator, epochs, print_training_logs, results_path):
+def train_model(model, task_type, train_generator, valid_generator, test_generator, epochs, print_training_logs, results_path, lr_rate):
     if task_type == TASK_REGRESSION:
         loss_fn = nn.MSELoss()
     elif task_type == TASK_CLASSIFICATION:
         loss_fn = nn.CrossEntropyLoss()
-    optimizer = Adam(model.parameters(), lr=0.0001, weight_decay=0.00002)
+    optimizer = Adam(model.parameters(), lr=lr_rate, weight_decay=0.00002)
     
     def calc_metrics_regression(model, generator):
         loss = 0
@@ -336,4 +337,4 @@ if __name__ == "__main__":
     train_generator = torch.utils.data.DataLoader(train_dataset, shuffle=True, num_workers=0, batch_size=8, generator=g)
     valid_generator = torch.utils.data.DataLoader(valid_dataset, shuffle=True, num_workers=0, batch_size=1, generator=g)
     test_generator = torch.utils.data.DataLoader(test_dataset, shuffle=True, num_workers=0, batch_size=1, generator=g)
-    train_model(model, args.task_type, train_generator, valid_generator, test_generator, args.epochs, args.print_training_loss, args.results_path)
+    train_model(model, args.task_type, train_generator, valid_generator, test_generator, args.epochs, args.print_training_loss, args.results_path, args.learning_rate)
