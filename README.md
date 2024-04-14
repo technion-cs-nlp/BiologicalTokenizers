@@ -78,20 +78,24 @@ python train_tokenizer_bert.py --tokenizer-type WPC --vocab-size 200 --results-p
 ## APA
 
 ```
-Dotan, E., Jaschek, G., Pupko, T., & Belinkov, Y. (2023). Effect of Tokenization on Transformers for Biological Sequences. bioRxiv. https://doi.org/10.1101/2023.08.15.553415
+Edo Dotan, Gal Jaschek, Tal Pupko, Yonatan Belinkov, Effect of tokenization on transformers for biological sequences, Bioinformatics, 2024;, btae196, https://doi.org/10.1093/bioinformatics/btae196
 ```
 
 
 ## BibTeX
 ```
-@article{Dotan_Effect_of_Tokenization_2023,
-  author = {Dotan, Edo and Jaschek, Gal and Pupko, Tal and Belinkov, Yonatan},
-  doi = {10.1101/2023.08.15.553415},
-  journal = {bioRxiv},
-  month = aug,
-  title = {{Effect of Tokenization on Transformers for Biological Sequences}},
-  year = {2023}
+@article{Dotan_Effect_of_Tokenization_2024,
+    author = {Dotan, Edo and Jaschek, Gal and Pupko, Tal and Belinkov, Yonatan},
+    title = "{Effect of tokenization on transformers for biological sequences}",
+    journal = {Bioinformatics},
+    pages = {btae196},
+    year = {2024},
+    month = {04},
+    abstract = "{Deep-learning models are transforming biological research, including many bioinformatics and comparative genomics algorithms, such as sequence alignments, phylogenetic tree inference, and automatic classification of protein functions. Among these deep-learning algorithms, models for processing natural languages, developed in the natural language processing (NLP) community, were recently applied to biological sequences. However, biological sequences are different from natural languages, such as English, and French, in which segmentation of the text to separate words is relatively straightforward. Moreover, biological sequences are characterized by extremely long sentences, which hamper their processing by current machine-learning models, notably the transformer architecture. In NLP, one of the first processing steps is to transform the raw text to a list of tokens. Deep-learning applications to biological sequence data mostly segment proteins and DNA to single characters. In this work, we study the effect of alternative tokenization algorithms on eight different tasks in biology, from predicting the function of proteins and their stability, through nucleotide sequence alignment, to classifying proteins to specific families.We demonstrate that applying alternative tokenization algorithms can increase accuracy and at the same time, substantially reduce the input length compared to the trivial tokenizer in which each character is a token. Furthermore, applying these tokenization algorithms allows interpreting trained models, taking into account dependencies among positions. Finally, we trained these tokenizers on a large dataset of protein sequences containing more than 400 billion amino acids, which resulted in over a three-fold decrease in the number of tokens. We then tested these tokenizers trained on large-scale data on the above specific tasks and showed that for some tasks it is highly beneficial to train database-specific tokenizers. Our study suggests that tokenizers are likely to be a critical component in future deep-network analysis of biological sequence data.Code, data and trained tokenizers are available on https://github.com/technion-cs-nlp/BiologicalTokenizers.}",
+    issn = {1367-4811},
+    doi = {10.1093/bioinformatics/btae196},
+    url = {https://doi.org/10.1093/bioinformatics/btae196},
+    eprint = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btae196/57226869/btae196.pdf},
 }
-
 ```
 
