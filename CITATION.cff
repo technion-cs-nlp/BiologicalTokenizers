@@ -13,9 +13,9 @@ authors:
   given-names: "Yonatan"
 title: "Effect of Tokenization on Transformers for Biological Sequences"
 version: 1.0.0
-doi: https://doi.org/10.1101/2023.08.15.553415
-date-released: 2023-08-17
-url: "https://github.com/idotan286/BiologicalTokenizers"
+doi: 10.1093/bioinformatics/btae196
+date-released: 2023-04-12
+url: "https://github.com/technion-cs-nlp/BiologicalTokenizers"
 preferred-citation: 
   type: article
   authors:
@@ -29,8 +29,8 @@ preferred-citation:
     orcid: "https://orcid.org/0000-0001-9463-2575"
   - family-names: "Belinkov"
     given-names: "Yonatan"
-  doi: "10.1101/2023.08.15.553415"
-  journal: "bioRxiv"
-  month: 08
+  doi: "10.1093/bioinformatics/btae196"
+  journal: "Bioinformatics"
+  month: 04
   title: "Effect of Tokenization on Transformers for Biological Sequences"
-  year: 2023
+  year: 2024
