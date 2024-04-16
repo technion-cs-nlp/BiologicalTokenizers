@@ -57,7 +57,7 @@ class Dataset(torch.utils.data.Dataset):
         return len(self.encodings)
 
 def add_arguments(parser):
-    parser.add_argument("-t", "--tokenizer-type", type=str, choices=[TOKEZNIER_BPE, TOKEZNIER_WPC, TOKEZNIER_UNI, TOKEZNIER_WORDS, TOKEZNIER_PAIRS], default='WRL', help=f'which tokenizer to train options: ["{TOKEZNIER_BPE}", "{TOKEZNIER_WPC}", "{TOKEZNIER_UNI}", "{TOKEZNIER_WORDS}", "{TOKEZNIER_PAIRS}"]')
+    parser.add_argument("-t", "--tokenizer-type", type=str, choices=[TOKEZNIER_BPE, TOKEZNIER_WPC, TOKEZNIER_UNI, TOKEZNIER_WORDS, TOKEZNIER_PAIRS], default=TOKEZNIER_WORDS, help=f'which tokenizer to train options: ["{TOKEZNIER_BPE}", "{TOKEZNIER_WPC}", "{TOKEZNIER_UNI}", "{TOKEZNIER_WORDS}", "{TOKEZNIER_PAIRS}"]')
     parser.add_argument("-s", "--vocab-size", type=int, default=100, help=f'vocabulary size for the trained tokenziers: "{TOKEZNIER_BPE}", "{TOKEZNIER_WPC}" and "{TOKEZNIER_UNI}"')
     parser.add_argument("-r", "--results-path", type=str, default='.', help='path to save model, tokneizer and results csv')
     parser.add_argument("-l", "--layers-num", type=int, default=2, help='numbers of BERT layers')
