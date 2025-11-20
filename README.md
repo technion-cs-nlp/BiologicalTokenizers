@@ -99,3 +99,5 @@ Edo Dotan, Gal Jaschek, Tal Pupko, Yonatan Belinkov, Effect of tokenization on t
 }
 ```
 
+## Copyright Notice
+The copyright holder for this code are the authors: Edo Dotan, Gal Jaschek, Tal Pupko, Yonatan Belinkov. It is made available under a CC-BY 4.0 International license.
